@@ -40,9 +40,13 @@
             <a class="contact phone link" href="tel:+11(000)1111111">+11 (000) 111-11-11</a>
         </li>
     </ul>
-    <button type="button" class="mobile-menu-open">
-        <svg class="mobile-menu-open_icon">
-            <use href="./images/symbol-defs.svg#icon-burger"></use>
+    <button
+          class="menu-btn js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+        <svg class="burger-button" width="32" height="22" >
+            <use href="./images/symbol-defs.svg#icon-burger" width="32" height="22"></use>
         </svg>
     </button>
 </div>
@@ -118,9 +122,52 @@
         <div class="container">
         <h2 class="section-title">What are we doing</h2>
         <ul class="list list-examples">
-        <li class="examples-item"><img src="./images/we-1.jpg" alt="Сomputer monitor" width="360" height="300"></li>
-        <li class="examples-item"><img src="./images/we-2.jpg" alt="Phone applications" width="360" height="300"></li>
-        <li class="examples-item"><img src="./images/we-3.jpg" alt="Adapting" width="360" height="300"></li>
+        <li class="examples-item">
+            <picture>
+                <!--desktop-->
+                <source
+                media="(min-width: 1200px)"
+                srcset="
+                ./images/we/we-1_360@1x.jpg 1x,
+                ./images/we/we-1_720@2x.jpg 2x
+                "
+                type="image/jpg"
+              />
+            
+            <img
+            src="./images/we/we-1_360@1x.jpg" 
+            alt="Computer monitor" 
+            sizes="360">
+        </picture>
+        </li>
+        <li class="examples-item">
+            <picture>
+                <source
+                media="(min-width: 1200px)"
+                srcset="
+                ./images/we/we-2_360@1x.jpg 1x,
+                ./images/we/we-2_720@2x.jpg 2x"
+                type="image/jpg"
+                />
+            <img src="./images/we/we-2_360@1x.jpg" 
+            alt="Phone applications" 
+            sizes="360">
+        </picture>
+        </li>
+        <li class="examples-item">
+            <picture>
+                <source
+                media="(min-width: 1200px)"
+                srcset="
+                ./images/we/we-3_360@1x.jpg 1x,
+                ./images/we/we-3_720@2x.jpg 2x"
+                type="image/jpg"
+                />
+            <img src="./images/we/we-3_360@1x.jpg" 
+            alt="Adapting" 
+            sizes="360">
+        </picture>
+        </li>
         </ul>
     </div>
     </section>
@@ -132,7 +179,12 @@
         <h2 class="section-title">Our Team</h2>
         <ul class="list team-list">
         <li class="team-item">
-            <img src="./images/Mark_Guerrero.jpg" alt="Mark Guerrero" width="264" height="260">
+            <img srcset="./images/team/mark-guerrero@1x.jpg 1x,
+            ./images/team/mark-guerrero@2x.jpg 2x" 
+            src="./images/team/mark-guerrero@1x.jpg" 
+            alt="Mark Guerrero" 
+            sizes="264"
+            loading="lazy">
         <div class="description-team">
             <h3 class="subject">Mark Guerrero</h3>
             <p class="section-text">Product Designer</p>
@@ -171,7 +223,12 @@
         </li>
 
         <li class="team-item">
-            <img src="./images/Tom_Ford.jpg" alt="Tom Ford" width="264" height="260">
+            <img srcset="./images/team/tom-ford@1x.jpg 1x,
+            ./images/team/tom-ford@2x.jpg 2x" 
+            src="./images/team/tom-ford@1x.jpg" 
+            alt="Tom Ford" 
+            sizes="264"
+            loading="lazy">
         <div class="description-team">
             <h3 class="subject">Tom Ford</h3>
             <p class="section-text">Frontend Developer</p>
@@ -209,7 +266,13 @@
         </li>
 
         <li class="team-item">
-            <img src="./images/Camila_Garcia.jpg" alt="Camila Garcia" width="264" height="260">
+            <img srcset="./images/team/camila-garcia@1x.jpg 1x,
+            ./images/team/camila-garcia@2x.jpg 2x" 
+            src="./images/team/camila-garcia@1x.jpg" 
+            alt="Camila Garcia" 
+            sizes="264"
+            loading="lazy">
+
          <div class="description-team">   
             <h3 class="subject">Camila Garcia</h3>
             <p class="section-text">Marketing</p>
@@ -247,7 +310,13 @@
         </li>
 
         <li class="team-item">
-            <img src="./images/Daniel_Wilson.jpg" alt="Daniel Wilson" width="264" height="260">
+            <img srcset="./images/team/daniel-wilson@1x.jpg 1x,
+            ./images/team/daniel-wilson@2x.jpg 2x" 
+            src="./images/team/daniel-wilson@1x.jpg" 
+            alt="Daniel Wilson" 
+            sizes="264"
+            loading="lazy">
+
          <div class="description-team">  
             <h3 class="subject">Daniel Wilson</h3>
             <p class="section-text">UI Designer</p>
@@ -458,7 +527,99 @@
     </form>
     </div>
    </div>
-
+    <!-- mob-->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+        <button class="menu-toggle js-close-menu">
+          <svg class="modal-icon" width="8" height="8">
+            <use href="./images/symbol-defs.svg#icon-close-black"></use>
+          </svg>
+        </button>
+        <ul class="mobile-menu list">
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link link" href="./index.html">Studio</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link link" href="./portfolio.html">Portfolio</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link link" href="">Contacts</a>
+          </li>
+        </ul>
+        <ul class="mobile-contacts list">
+          <li class="mobile-contacts-item">
+            <a class="mobile-contacts-link accent link" href="tel:+11(000)1111111"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+          <li class="mobile-contacts-item">
+            <a class="mobile-contacts-link link" href="mailto:info@devstudio.com"
+              >info@devstudio.com</a
+            >
+          </li>
+        </ul>
+        <ul class="mobile-socials list">
+          <li class="mobile-socials-item">
+            <a
+              class="mobile-socials-link link"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram icon"
+            >
+              <svg class="mobile-socials-icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-socials-item">
+            <a
+              class="mobile-socials-link link"
+              href="https://twitter.com"
+              aria-label="Twitter icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="mobile-socials-icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-socials-item">
+            <a
+              class="mobile-socials-link link"
+              href="https://facebook.com"
+              aria-label="Facebook icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="mobile-socials-icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobile-socials-item">
+            <a
+              class="mobile-socials-link link"
+              href="https://linkedin.com"
+              aria-label="LinkedIn icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="mobile-socials-icon" width="24" height="24">
+                <use href="./images/symbol-defs.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    
+   <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
    <script src="./js/modal.js"></script>
+   <script defer src="./js/mobile-menu.js"></script>
 </body>
 </html>
