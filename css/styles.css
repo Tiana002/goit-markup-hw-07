@@ -620,10 +620,6 @@ screen and (min-width: 769px) and (min-resolution: 2dppx) {
 }
 
 @media screen and (max-width: 767.98px) {
-/*.team .container {
-     padding: 96px 82px 128px 82px;
-
-    }*/
 .team {
     padding: 96px 0 128px 0;
    
@@ -635,17 +631,10 @@ screen and (min-width: 769px) and (min-resolution: 2dppx) {
 .list.team-list {
     display: flex;
     flex-wrap: wrap;
-   /* gap: 24px;
-    row-gap: 64px;*/
     justify-content: center;
     }
 
 @media screen and (min-width: 768px) {
-
-/*.team .container {  
-    padding-top: 96px;
-    padding-bottom: 104px;
- }*/
  .team {  
     padding-top: 96px;
     padding-bottom: 104px;
@@ -659,11 +648,6 @@ screen and (min-width: 769px) and (min-resolution: 2dppx) {
     }
 
 @media screen and (min-width: 1200px) {
-
-/*.team .container {
-    padding: 120px 0;
-    
-   }*/
 .team {
     padding: 120px 0;
     
